@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070b16">
+  <meta name="description" content="Model your warehouse and business ontology as versioned files in Git, then check them against what is actually deployed.">
+  <title>Data Model — the governed model for your warehouse and your AI</title>
+  <link rel="icon" type="image/svg+xml" href="logo/mark.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Nav -->
+  <header class="sticky top-0 z-50 border-b border-white/5 bg-ink-950/70 backdrop-blur-xl">
+    <nav class="container-page flex h-16 items-center justify-between">
+      <a href="#" class="logo" aria-label="Data Model home">
+        <img src="logo/mark.svg" alt="" class="logo-mark">
+        <span class="logo-word">data<span class="logo-accent">model</span></span>
+      </a>
+      <div class="hidden items-center gap-8 text-sm text-slate-400 md:flex">
+        <a href="#features" class="transition hover:text-white">Product</a>
+        <a href="#how" class="transition hover:text-white">How it works</a>
+        <a href="#integrations" class="transition hover:text-white">Integrations</a>
+        <a href="#pricing" class="transition hover:text-white">Pricing</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="#" class="hidden text-sm font-medium text-slate-300 transition hover:text-white sm:block">GitHub</a>
+        <a href="#cta" class="btn-primary !py-2">Join early access</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="relative overflow-hidden">
+      <div class="pointer-events-none absolute inset-0 bg-grid [background-size:44px_44px] [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_75%)]"></div>
+      <div class="pointer-events-none absolute -top-40 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-brand-500/25 blur-[120px]"></div>
+
+      <div class="container-page relative pb-20 pt-20 sm:pt-28">
+        <div class="mx-auto max-w-4xl text-center">
+          <a href="#cta" class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300 transition hover:border-white/20">
+            <span class="rounded-full bg-brand-500/20 px-2 py-0.5 text-brand-300">New</span>
+            Design partners wanted for Databricks + dbt + Atlan
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+          <h1 class="mt-8 text-balance text-4xl font-semibold tracking-tight text-white sm:text-6xl sm:leading-[1.05]">
+            The governed model for your
+            <span class="bg-brand-gradient bg-clip-text text-transparent">warehouse and your AI</span>
+          </h1>
+          <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-400">
+            Design Kimball and Data Vault models and their business ontology as versioned files in Git.
+            Validate them, export trusted context for AI, and catch drift between what you approved and what is deployed.
+          </p>
+          <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <a href="#cta" class="btn-primary px-6 py-3 text-base">Join early access</a>
+            <a href="#how" class="btn-ghost px-6 py-3 text-base">
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+              See how it works
+            </a>
+          </div>
+          <p class="mt-5 text-xs text-slate-500">Local-first &middot; runs offline &middot; no account or LLM required</p>
+        </div>
+
+        <!-- Hero product visual -->
+        <div class="relative mx-auto mt-16 max-w-5xl">
+          <div class="absolute -inset-px rounded-2xl bg-gradient-to-b from-white/20 to-white/0"></div>
+          <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-ink-900 shadow-2xl shadow-brand-500/10">
+            <div class="flex items-center gap-2 border-b border-white/10 bg-ink-800/80 px-4 py-3">
+              <span class="h-3 w-3 rounded-full bg-[#ff5f57]"></span>
+              <span class="h-3 w-3 rounded-full bg-[#febc2e]"></span>
+              <span class="h-3 w-3 rounded-full bg-[#28c840]"></span>
+              <span class="ml-4 font-mono text-xs text-slate-500">models/sales.model.yaml</span>
+              <span class="ml-auto rounded-md bg-emerald-400/10 px-2 py-0.5 font-mono text-[11px] text-emerald-300 ring-1 ring-inset ring-emerald-400/20">main &bull; validated</span>
+            </div>
+            <div class="grid md:grid-cols-[1.15fr_1fr]">
+              <pre class="overflow-x-auto border-b border-white/10 p-6 font-mono text-[13px] leading-6 md:border-b-0 md:border-r"><code><span class="code-key">model</span>: <span class="code-str">sales</span>
+<span class="code-key">method</span>: <span class="code-str">kimball</span>
+<span class="code-key">entities</span>:
+  - <span class="code-key">id</span>: <span class="code-str">ent_customer</span>
+    <span class="code-key">name</span>: <span class="code-str">dim_customer</span>
+    <span class="code-key">concept</span>: <span class="code-str">onto:Customer</span>
+    <span class="code-key">fields</span>:
+      - { <span class="code-key">id</span>: <span class="code-str">fld_cust_key</span>, <span class="code-key">type</span>: <span class="code-str">bigint</span>, <span class="code-key">pk</span>: <span class="code-str">true</span> }
+      - { <span class="code-key">id</span>: <span class="code-str">fld_segment</span>,  <span class="code-key">type</span>: <span class="code-str">string</span> }
+  - <span class="code-key">id</span>: <span class="code-str">ent_orders</span>
+    <span class="code-key">name</span>: <span class="code-str">fct_orders</span>
+    <span class="code-key">grain</span>: <span class="code-str">one row per order line</span>
+<span class="code-dim"># stable IDs survive renames</span></code></pre>
+              <div class="space-y-3 p-6">
+                <div class="flex items-center justify-between">
+                  <p class="text-sm font-semibold text-white">Drift check</p>
+                  <span class="text-xs text-slate-500">dbt &middot; Databricks &middot; Atlan</span>
+                </div>
+                <div class="rounded-xl border border-rose-400/20 bg-rose-400/[0.06] p-3.5">
+                  <p class="flex items-center gap-2 text-xs font-semibold text-rose-300"><span class="h-1.5 w-1.5 rounded-full bg-rose-400"></span>Error &middot; type mismatch</p>
+                  <p class="mt-1 text-sm text-slate-300"><span class="font-mono text-[12px]">fct_orders.amount</span> is <span class="font-mono text-[12px]">double</span> in Databricks, approved as <span class="font-mono text-[12px]">decimal(18,2)</span></p>
+                </div>
+                <div class="rounded-xl border border-amber-400/20 bg-amber-400/[0.06] p-3.5">
+                  <p class="flex items-center gap-2 text-xs font-semibold text-amber-300"><span class="h-1.5 w-1.5 rounded-full bg-amber-400"></span>Warning &middot; missing coverage</p>
+                  <p class="mt-1 text-sm text-slate-300"><span class="font-mono text-[12px]">dim_customer.segment</span> has no Atlan glossary term</p>
+                </div>
+                <div class="rounded-xl border border-emerald-400/20 bg-emerald-400/[0.06] p-3.5">
+                  <p class="flex items-center gap-2 text-xs font-semibold text-emerald-300"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>Matched &middot; 42 of 44 fields</p>
+                  <p class="mt-1 text-sm text-slate-300">Rename <span class="font-mono text-[12px]">customer_dim &rarr; dim_customer</span> tracked by stable ID</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logos / stack strip -->
+    <section id="integrations" class="border-y border-white/5 bg-white/[0.015]">
+      <div class="container-page flex flex-col items-center gap-6 py-10 md:flex-row md:justify-between">
+        <p class="text-sm text-slate-500">Built around the stack you already run</p>
+        <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-lg font-semibold tracking-tight text-slate-400">
+          <span>Databricks</span><span>dbt</span><span>Atlan</span><span>Git</span><span>JSON-LD</span><span>MCP</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="container-page py-24">
+      <div class="max-w-2xl">
+        <p class="eyebrow">Product</p>
+        <h2 class="section-title text-balance">One source of truth for meaning, not just tables</h2>
+        <p class="mt-4 text-slate-400">Keep the approved design, catalog snapshots, deployed implementation and runtime evidence as separate sources, so observations never overwrite intent.</p>
+      </div>
+      <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="card">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div>
+          <h3 class="mt-5 font-semibold text-white">Models as code</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-400">YAML/JSON files with stable IDs that live in Git and review like any other change.</p>
+        </div>
+        <div class="card">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+          <h3 class="mt-5 font-semibold text-white">Method-aware validation</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-400">Relational, Kimball and Data Vault 2.0 rules catch broken references, grains and keys before deploy.</p>
+        </div>
+        <div class="card">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10H7z"/><path d="M3 12h4M17 12h4M12 3v4M12 17v4"/></svg></div>
+          <h3 class="mt-5 font-semibold text-white">Drift reconciliation</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-400">Compare the approved model with dbt, Databricks and Atlan metadata and see exactly what diverged.</p>
+        </div>
+        <div class="card">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8 7.5 10.5 16M16 7.5 13.5 16M8.5 6h7"/></svg></div>
+          <h3 class="mt-5 font-semibold text-white">Business ontology</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-400">Deterministic JSON-LD releases with SHA-256 manifests link every table and field to a concept.</p>
+        </div>
+        <div class="card">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><rect x="7" y="7" width="10" height="10" rx="2"/></svg></div>
+          <h3 class="mt-5 font-semibold text-white">Trusted context for AI</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-400">Export dimensions, measures and metric definitions so agents and text-to-SQL use governed meaning.</p>
+        </div>
+        <div class="card">
+          <div class="icon-tile"><svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3v12M18 9v12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/><path d="M6 15a9 9 0 0 0 9-9"/></svg></div>
+          <h3 class="mt-5 font-semibold text-white">Semantic diffs</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-400">Diffs by stable ID recognise a rename as a rename, not a drop plus an add.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how" class="relative border-y border-white/5 bg-gradient-to-b from-ink-900 to-ink-950 py-24">
+      <div class="container-page">
+        <div class="mx-auto max-w-2xl text-center">
+          <p class="eyebrow">How it works</p>
+          <h2 class="section-title">From design to deployed, in one loop</h2>
+        </div>
+        <ol class="mt-14 grid gap-5 md:grid-cols-3">
+          <li class="card">
+            <span class="font-mono text-sm text-brand-300">01</span>
+            <h3 class="mt-3 text-lg font-semibold text-white">Design</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-400">Author the model in the browser workspace or your editor, or draft it from existing dbt and Databricks metadata.</p>
+          </li>
+          <li class="card">
+            <span class="font-mono text-sm text-brand-300">02</span>
+            <h3 class="mt-3 text-lg font-semibold text-white">Review</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-400">Validate locally and in pull requests. Semantic diffs show reviewers what the change means.</p>
+          </li>
+          <li class="card">
+            <span class="font-mono text-sm text-brand-300">03</span>
+            <h3 class="mt-3 text-lg font-semibold text-white">Reconcile</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-400">Check deployed assets and catalog entries against the approved model, and publish the ontology for AI.</p>
+          </li>
+        </ol>
+
+        <div class="mt-16 overflow-hidden rounded-2xl border border-white/10 bg-ink-900 shadow-glow">
+          <img src="img/workspace.png" alt="The Data Model browser workspace showing the sales model" class="w-full">
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="container-page py-24">
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="eyebrow">Pricing</p>
+        <h2 class="section-title text-balance">Open core. Pay for operations, not portability.</h2>
+        <p class="mt-4 text-slate-400">Your models stay in portable files you own, whichever plan you choose.</p>
+      </div>
+      <div class="mt-14 grid gap-5 lg:grid-cols-3">
+        <div class="card flex flex-col">
+          <h3 class="font-semibold text-white">Community</h3>
+          <p class="mt-1 text-sm text-slate-400">For individuals and teams self-hosting.</p>
+          <p class="mt-6"><span class="text-4xl font-semibold text-white">Free</span></p>
+          <ul class="mt-6 space-y-3 text-sm text-slate-300">
+            <li class="flex gap-3"><span class="text-brand-300">&#10003;</span>Modelling, validation and diffs</li>
+            <li class="flex gap-3"><span class="text-brand-300">&#10003;</span>Ontology and AI-context export</li>
+            <li class="flex gap-3"><span class="text-brand-300">&#10003;</span>Basic reconciliation</li>
+          </ul>
+          <a href="#cta" class="btn-ghost mt-8">Get started</a>
+        </div>
+        <div class="relative flex flex-col rounded-2xl border border-brand-400/40 bg-gradient-to-b from-brand-500/15 to-transparent p-6 shadow-glow">
+          <span class="absolute -top-3 left-6 rounded-full bg-brand-gradient px-3 py-1 text-xs font-semibold text-white">Most popular</span>
+          <h3 class="font-semibold text-white">Team</h3>
+          <p class="mt-1 text-sm text-slate-400">Managed workspace for data teams.</p>
+          <p class="mt-6"><span class="text-4xl font-semibold text-white">$199</span><span class="text-slate-400"> / workspace / mo</span></p>
+          <ul class="mt-6 space-y-3 text-sm text-slate-300">
+            <li class="flex gap-3"><span class="text-brand-300">&#10003;</span>Everything in Community</li>
+            <li class="flex gap-3"><span class="text-brand-300">&#10003;</span>Hosted projects and backups</li>
+            <li class="flex gap-3"><span class="text-brand-300">&#10003;</span>Scheduled drift scans</li>
+            <li class="flex gap-3"><span class="text-brand-300">&#10003;</span>Shared review and comments</li>
+          </ul>
+          <a href="#cta" class="btn-primary mt-8">Join early access</a>
+        </div>
+        <div class="card flex flex-col">
+          <h3 class="font-semibold text-white">Enterprise</h3>
+          <p class="mt-1 text-sm text-slate-400">Your cloud, your controls.</p>
+          <p class="mt-6"><span class="text-4xl font-semibold text-white">Custom</span></p>
+          <ul class="mt-6 space-y-3 text-sm text-slate-300">
+            <li class="flex gap-3"><span class="text-brand-300">&#10003;</span>Deploy in your own cloud</li>
+            <li class="flex gap-3"><span class="text-brand-300">&#10003;</span>SSO and identity lifecycle</li>
+            <li class="flex gap-3"><span class="text-brand-300">&#10003;</span>Support and onboarding services</li>
+          </ul>
+          <a href="#cta" class="btn-ghost mt-8">Talk to us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" class="container-page pb-24">
+      <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-ink-900 px-8 py-16 text-center sm:px-16">
+        <div class="pointer-events-none absolute -bottom-32 left-1/2 h-72 w-[700px] -translate-x-1/2 rounded-full bg-violet-500/25 blur-[100px]"></div>
+        <h2 class="relative text-3xl font-semibold tracking-tight text-white sm:text-4xl">Become a design partner</h2>
+        <p class="relative mx-auto mt-4 max-w-xl text-slate-400">We're working with a small number of teams on Databricks, dbt and Atlan to shape the first live connectors.</p>
+        <form class="relative mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row" onsubmit="event.preventDefault()">
+          <label for="email" class="sr-only">Work email</label>
+          <input id="email" type="email" required placeholder="you@company.com" class="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/40">
+          <button type="submit" class="btn-primary shrink-0">Request access</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/5">
+    <div class="container-page flex flex-col items-center justify-between gap-4 py-10 text-sm text-slate-500 sm:flex-row">
+      <div class="flex items-center gap-3"><img src="logo/mark.svg" alt="" class="logo-mark !h-6 !w-6"><p>&copy; 2026 Data Model</p></div>
+      <div class="flex gap-6">
+        <a href="#features" class="hover:text-slate-300">Product</a>
+        <a href="#pricing" class="hover:text-slate-300">Pricing</a>
+        <a href="#" class="hover:text-slate-300">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

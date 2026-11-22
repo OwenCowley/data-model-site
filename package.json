@@ -1,0 +1,13 @@
+{
+  "name": "data-model-site",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Static marketing site for the Data Model workspace (Tailwind CSS).",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./public/styles.css --minify",
+    "dev": "tailwindcss -i ./src/input.css -o ./public/styles.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}
