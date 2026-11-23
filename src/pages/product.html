@@ -1,0 +1,125 @@
+<!--meta {"title":"Product — Data Model","description":"Model files with stable IDs, method-aware validation, drift reconciliation against dbt, Databricks and Atlan, JSON-LD ontology releases and governed context for AI.","nav":"product"} -->
+    <section class="relative overflow-hidden">
+      <div class="pointer-events-none absolute -top-40 left-1/2 h-[420px] w-[800px] -translate-x-1/2 rounded-full bg-brand-500/20 blur-[120px]"></div>
+      <div class="page-hero relative">
+        <p class="eyebrow">Product</p>
+        <h1 class="page-title">Everything your model means, in one governed workspace</h1>
+        <p class="lead">A CLI and a browser workspace built on the same engine. Design the model, review it like code, and check it against the warehouse and catalog.</p>
+      </div>
+    </section>
+
+    <section class="container-page space-y-28 pb-24 pt-8">
+      <div class="grid items-center gap-12 lg:grid-cols-[1fr_1.4fr]">
+        <div>
+          <p class="eyebrow">Model</p>
+          <h2 class="section-title">Models as code, with diagrams people can read</h2>
+          <p class="mt-4 text-slate-400">Entities, attributes, keys and relationships live in YAML or JSON files with stable IDs. The workspace renders them as editable lists and an entity diagram.</p>
+          <ul class="mt-6 space-y-3 text-sm text-slate-300">
+            <li class="check">Relational, Kimball and Data Vault 2.0 profiles</li>
+            <li class="check">Concepts and definitions linked to every entity</li>
+            <li class="check">Deterministic formatting that diffs cleanly in Git</li>
+          </ul>
+        </div>
+        <div class="screenshot"><img src="/img/app-model.webp" alt="Model tab listing entities, attributes and linked concepts" width="1440" height="900" loading="lazy"></div>
+      </div>
+
+      <div class="grid items-center gap-12 lg:grid-cols-[1.4fr_1fr]">
+        <div class="screenshot order-last lg:order-first"><img src="/img/app-findings.webp" alt="Findings tab listing validation diagnostics" width="1440" height="900" loading="lazy"></div>
+        <div>
+          <p class="eyebrow">Validate</p>
+          <h2 class="section-title">Catch modelling mistakes before they ship</h2>
+          <p class="mt-4 text-slate-400">Validation checks references, keys, grains and method rules, and reports every finding with a stable code. Unsupported semantics are flagged, never silently dropped.</p>
+          <ul class="mt-6 space-y-3 text-sm text-slate-300">
+            <li class="check">Broken references and duplicate IDs</li>
+            <li class="check">Missing grains, keys and history types</li>
+            <li class="check">Machine-readable JSON output for CI</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid items-center gap-12 lg:grid-cols-[1fr_1.4fr]">
+        <div>
+          <p class="eyebrow">Reconcile</p>
+          <h2 class="section-title">See where deployed reality drifts from the design</h2>
+          <p class="mt-4 text-slate-400">Normalise dbt, Databricks and Atlan metadata, then compare it with the approved model. Intent, catalog, deployment and runtime evidence stay separate, so observations never overwrite meaning.</p>
+          <ul class="mt-6 space-y-3 text-sm text-slate-300">
+            <li class="check">Type, nullability and coverage mismatches</li>
+            <li class="check">Unknowns reported as unknowns, not as missing assets</li>
+            <li class="check">Structured comparison across sources</li>
+          </ul>
+        </div>
+        <div class="screenshot"><img src="/img/app-evidence.webp" alt="Evidence tab showing normalised dbt, Atlan and Databricks metadata" width="1440" height="900" loading="lazy"></div>
+      </div>
+
+      <div class="grid items-center gap-12 lg:grid-cols-[1.4fr_1fr]">
+        <div class="screenshot order-last lg:order-first"><img src="/img/app-ontology.webp" alt="Ontology tab showing the JSON-LD export" width="1440" height="900" loading="lazy"></div>
+        <div>
+          <p class="eyebrow">Ontology</p>
+          <h2 class="section-title">A business ontology that AI can trust</h2>
+          <p class="mt-4 text-slate-400">Publish deterministic JSON-LD releases with SHA-256 manifests. Every table and field links to a concept with a stable URI, so meaning survives renames and refactors.</p>
+          <ul class="mt-6 space-y-3 text-sm text-slate-300">
+            <li class="check">Reproducible releases with content hashes</li>
+            <li class="check">Concept URIs preserved through renames</li>
+            <li class="check">Semantic diffs between revisions</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid items-center gap-12 lg:grid-cols-[1fr_1.4fr]">
+        <div>
+          <p class="eyebrow">Semantic layer</p>
+          <h2 class="section-title">Governed metrics and context for AI agents</h2>
+          <p class="mt-4 text-slate-400">Define dimensions, measures and metrics next to the model, then export them as structured context for text-to-SQL and AI analysts.</p>
+          <ul class="mt-6 space-y-3 text-sm text-slate-300">
+            <li class="check">Definitions validated against the model</li>
+            <li class="check">Exports that work without an LLM or network</li>
+            <li class="check">Bring your own AI tools</li>
+          </ul>
+        </div>
+        <div class="screenshot"><img src="/img/app-semantic.webp" alt="Semantic tab showing dimensions, measures and metrics" width="1440" height="900" loading="lazy"></div>
+      </div>
+
+      <div class="grid items-center gap-12 lg:grid-cols-[1.4fr_1fr]">
+        <div class="screenshot order-last lg:order-first"><img src="/img/app-authoring.webp" alt="Authoring tab with an editable model and import preview" width="1440" height="900" loading="lazy"></div>
+        <div>
+          <p class="eyebrow">Authoring</p>
+          <h2 class="section-title">Start from the metadata you already have</h2>
+          <p class="mt-4 text-slate-400">Edit models in the browser, or draft them from dbt and Databricks metadata. Proposals are previewed before adoption and never overwrite your source files.</p>
+          <ul class="mt-6 space-y-3 text-sm text-slate-300">
+            <li class="check">Round-trip YAML and JSON</li>
+            <li class="check">Reviewable import proposals</li>
+            <li class="check">Download drafts as files</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="container-page pb-24">
+      <div class="card !p-8">
+        <div class="grid gap-8 md:grid-cols-[1fr_2fr]">
+          <div>
+            <p class="eyebrow">Today</p>
+            <h2 class="mt-3 text-2xl font-semibold tracking-tight text-white">Where the product stands</h2>
+          </div>
+          <div class="grid gap-6 text-sm sm:grid-cols-2">
+            <div>
+              <p class="font-semibold text-white">Available now</p>
+              <ul class="mt-3 space-y-2 text-slate-400">
+                <li class="check">Local CLI and browser workspace</li>
+                <li class="check">Validation, diffs and ontology export</li>
+                <li class="check">Offline dbt, Databricks and Atlan normalisers</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-semibold text-white">In development</p>
+              <ul class="mt-3 space-y-2 text-slate-400">
+                <li class="flex gap-3"><span class="text-slate-500">&rarr;</span>Live read-only connectors</li>
+                <li class="flex gap-3"><span class="text-slate-500">&rarr;</span>Drift checks on pull requests</li>
+                <li class="flex gap-3"><span class="text-slate-500">&rarr;</span>Hosted team workspaces</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{{> cta}}

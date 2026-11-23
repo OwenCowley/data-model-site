@@ -2,10 +2,15 @@
   "name": "data-model-site",
   "version": "0.1.0",
   "private": true,
-  "description": "Static marketing site for the Data Model workspace (Tailwind CSS).",
+  "type": "module",
+  "description": "Marketing website for the Data Model workspace (static HTML + Tailwind CSS).",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
-    "build": "tailwindcss -i ./src/input.css -o ./public/styles.css --minify",
-    "dev": "tailwindcss -i ./src/input.css -o ./public/styles.css --watch"
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/build.mjs --serve",
+    "check": "node scripts/build.mjs && node scripts/check.mjs"
   },
   "devDependencies": {
     "tailwindcss": "3.4.17"

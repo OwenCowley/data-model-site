@@ -1,0 +1,52 @@
+<!--meta {"title":"Design partners — Data Model","description":"Join the Data Model design-partner programme: early access, preferential pricing and a direct line to the roadmap for Databricks, dbt and Atlan teams.","nav":"partners"} -->
+    <section class="relative overflow-hidden">
+      <div class="pointer-events-none absolute -top-40 left-1/2 h-[420px] w-[800px] -translate-x-1/2 rounded-full bg-violet-500/20 blur-[120px]"></div>
+      <div class="container-page relative grid gap-14 pb-24 pt-20 sm:pt-24 lg:grid-cols-[1fr_1fr]">
+        <div>
+          <p class="eyebrow">Design partners</p>
+          <h1 class="page-title !text-left">Help us build the governed model your team needs</h1>
+          <p class="mt-5 text-lg leading-8 text-slate-400">We're looking for a small number of data teams running Databricks, dbt or Atlan to shape the first live connectors and drift checks.</p>
+          <div class="mt-10 grid gap-6 sm:grid-cols-2">
+            <div>
+              <p class="font-semibold text-white">What you get</p>
+              <ul class="mt-3 space-y-2 text-sm text-slate-400">
+                <li class="check">Early access to the workspace</li>
+                <li class="check">Hands-on model and ontology setup</li>
+                <li class="check">Preferential pricing at launch</li>
+                <li class="check">Direct input on the roadmap</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-semibold text-white">What we ask</p>
+              <ul class="mt-3 space-y-2 text-sm text-slate-400">
+                <li class="check">A 30-minute call every two weeks</li>
+                <li class="check">Read-only metadata exports</li>
+                <li class="check">Honest feedback</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <form class="card !p-8 space-y-5" action="{{formAction}}" method="POST" data-signup data-configured="{{formConfigured}}">
+          <h2 class="text-xl font-semibold text-white">Request early access</h2>
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div><label for="name" class="field-label">Name</label><input id="name" name="name" required autocomplete="name" class="field"></div>
+            <div><label for="email" class="field-label">Work email</label><input id="email" name="email" type="email" required autocomplete="email" class="field" placeholder="you@company.com"></div>
+          </div>
+          <div><label for="company" class="field-label">Company</label><input id="company" name="company" autocomplete="organization" class="field"></div>
+          <fieldset>
+            <legend class="field-label">Your stack</legend>
+            <div class="mt-3 flex flex-wrap gap-3 text-sm text-slate-300">
+              <label class="flex items-center gap-2 rounded-lg border border-white/10 px-3 py-2"><input type="checkbox" name="stack" value="databricks" class="accent-brand-500">Databricks</label>
+              <label class="flex items-center gap-2 rounded-lg border border-white/10 px-3 py-2"><input type="checkbox" name="stack" value="dbt" class="accent-brand-500">dbt</label>
+              <label class="flex items-center gap-2 rounded-lg border border-white/10 px-3 py-2"><input type="checkbox" name="stack" value="atlan" class="accent-brand-500">Atlan</label>
+              <label class="flex items-center gap-2 rounded-lg border border-white/10 px-3 py-2"><input type="checkbox" name="stack" value="other" class="accent-brand-500">Other</label>
+            </div>
+          </fieldset>
+          <div><label for="message" class="field-label">What would you like to solve?</label><textarea id="message" name="message" rows="4" class="field"></textarea></div>
+          <button type="submit" class="btn-primary w-full py-3">Request access</button>
+          <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+          <p class="text-xs text-slate-500">We only use your details to contact you about the programme. See our <a href="/privacy/" class="text-slate-400 underline underline-offset-4">privacy notice</a>.</p>
+        </form>
+      </div>
+    </section>

@@ -1,0 +1,100 @@
+<!--meta {"title":"Docs — Data Model","description":"Get started with the Data Model CLI and browser workspace: install, validate a model, export an ontology and reconcile catalog metadata.","nav":"docs"} -->
+    <section class="page-hero !text-left">
+      <p class="eyebrow">Docs</p>
+      <h1 class="page-title">Getting started</h1>
+      <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-400">Run the workspace locally, validate the sample model and see a reconciliation report in a few minutes.</p>
+    </section>
+
+    <section class="container-page grid gap-12 pb-24 lg:grid-cols-[200px_1fr]">
+      <nav class="hidden lg:block" aria-label="On this page">
+        <div class="sticky top-24 space-y-2 text-sm">
+          <p class="font-semibold text-white">On this page</p>
+          <a href="#requirements" class="block text-slate-400 hover:text-white">Requirements</a>
+          <a href="#install" class="block text-slate-400 hover:text-white">Install</a>
+          <a href="#validate" class="block text-slate-400 hover:text-white">Validate a model</a>
+          <a href="#model-files" class="block text-slate-400 hover:text-white">Model files</a>
+          <a href="#ontology" class="block text-slate-400 hover:text-white">Ontology releases</a>
+          <a href="#reconcile" class="block text-slate-400 hover:text-white">Reconcile metadata</a>
+          <a href="#workspace" class="block text-slate-400 hover:text-white">Browser workspace</a>
+          <a href="#limits" class="block text-slate-400 hover:text-white">Current limits</a>
+        </div>
+      </nav>
+
+      <article class="prose-dm">
+        <div class="rounded-xl border border-brand-400/30 bg-brand-500/10 p-4 text-sm text-slate-300">
+          Source access is currently provided to design partners. <a href="/partners/">Request access</a> to follow along.
+        </div>
+
+        <h2 id="requirements">Requirements</h2>
+        <ul>
+          <li>Node.js 22.12 or newer and npm</li>
+          <li>Git</li>
+          <li>No cloud account, network access or LLM is required</li>
+        </ul>
+
+        <h2 id="install">Install</h2>
+        <pre><code>git clone &lt;repository-url&gt; data-model
+cd data-model
+npm ci
+npm run check</code></pre>
+        <p><code>npm run check</code> type-checks the workspace and runs the full test suite.</p>
+
+        <h2 id="validate">Validate a model</h2>
+        <pre><code>npm run dm -- validate examples/sales.model.yaml --json
+npm run dm -- format examples/sales.model.yaml
+npm run dm -- diff examples/sales.model.yaml examples/sales.model.yaml</code></pre>
+        <p><code>validate</code> reports findings with stable codes and exits non-zero on errors, so it can gate CI. <code>format</code> prints deterministic JSON to stdout and never overwrites source files. <code>diff</code> compares revisions by stable ID, so renames are reported as renames.</p>
+
+        <h2 id="model-files">Model files</h2>
+        <p>A model is a YAML or JSON file using the experimental <code>0.1.0-draft</code> contract. Every concept, entity, attribute, key and relationship has a stable ID.</p>
+        <pre><code>spec_version: "0.1.0-draft"
+project:
+  id: p001
+  name: Synthetic sales
+  profiles: [relational, kimball]
+  ontology_namespace: "https://example.org/sales/"
+concepts:
+  - id: c001
+    uri: "https://example.org/sales/Customer"
+    name: Customer
+    definition: A party that has placed an order.
+entities:
+  - id: e001
+    name: dim_customer
+    level: physical
+    profile: kimball
+    role: dimension
+    realizes: c001
+    history: { type: scd1 }
+    attributes:
+      - { id: a001, name: customer_key, type: integer, nullable: false }
+    keys:
+      - { id: k001, role: primary, attributes: [a001] }</code></pre>
+
+        <h2 id="ontology">Ontology releases</h2>
+        <pre><code>npm run dm -- ontology examples/sales.model.yaml \
+  --release examples/ontology-release.json --bundle</code></pre>
+        <p>Produces a deterministic JSON-LD release with a SHA-256 manifest. The same input always produces the same bytes.</p>
+
+        <h2 id="reconcile">Reconcile metadata</h2>
+        <pre><code>npm run dm -- dbt examples/dbt/input.json
+npm run dm -- databricks examples/databricks/input.json
+npm run dm -- atlan examples/atlan/input.json
+npm run dm -- reconcile examples/evidence/input.json
+npm run dm -- compare examples/comparison/input.json</code></pre>
+        <p>Normalisers read exported metadata files and keep unknowns explicit. <code>reconcile</code> checks supplied evidence against the approved model; the bundled demo deliberately reports two errors and exits with status 1.</p>
+
+        <h2 id="workspace">Browser workspace</h2>
+        <pre><code>npm run web:dev
+# open http://127.0.0.1:4173</code></pre>
+        <p>The workspace exposes the same engines as the CLI: Model, Diagram, Specification, Ontology, Changes, Findings, Evidence, Comparison, Semantic and Authoring.</p>
+
+        <h2 id="limits">Current limits</h2>
+        <ul>
+          <li>Bundled examples are synthetic fixtures; no production compatibility is claimed.</li>
+          <li>Connectors read exported files; live read-only connectors are in development.</li>
+          <li>Models are single files; multi-file projects are planned.</li>
+          <li>The file contract is a draft and may change before 1.0.</li>
+        </ul>
+      </article>
+    </section>
