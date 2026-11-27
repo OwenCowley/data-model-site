@@ -1,9 +1,9 @@
 {
-  "name": "data-model-site",
+  "name": "moderial-site",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Marketing website for the Data Model workspace (static HTML + Tailwind CSS).",
+  "description": "Marketing website for Moderial (static HTML + Tailwind CSS).",
   "engines": {
     "node": ">=20"
   },

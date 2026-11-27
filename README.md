@@ -1,6 +1,6 @@
-# data-model-site
+# Moderial website
 
-Marketing website for the Data Model workspace. Static HTML + Tailwind CSS 3.4,
+Marketing website for Moderial (moderial.ai). Static HTML + Tailwind CSS 3.4,
 built by a small Node script (no framework). The app itself lives in the
 `data-model` repository.
 
@@ -33,7 +33,7 @@ deployed to any static host (GitHub Pages, Cloudflare Pages, Netlify, Vercel).
 
 ## Before launch
 
-- Set `siteUrl` in `site.config.json` to the real domain (canonical URLs, sitemap, OG image).
+- `siteUrl` in `site.config.json` is set to `https://moderial.ai` (canonical URLs, sitemap, OG image). Register the domain before launch.
 - Set `formAction` to a form endpoint (e.g. Formspree) to enable design-partner sign-ups. Until then the form shows a "not connected" message and sends nothing.
 - Set `contactEmail` if you want a mailto link.
 - Have the privacy notice and terms reviewed; both are drafts.
