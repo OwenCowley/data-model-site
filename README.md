@@ -31,6 +31,17 @@ Requires Node 20+.
 The build also writes `sitemap.xml`, `robots.txt` and `404.html`. `dist/` can be
 deployed to any static host (GitHub Pages, Cloudflare Pages, Netlify, Vercel).
 
+## Deploy (Cloudflare Pages)
+
+1. Cloudflare dashboard → Workers & Pages → Create → Pages → Connect to Git, pick this repo.
+2. Framework preset: None. Build command: `npm run build`. Build output directory: `dist`.
+   Node version comes from `.node-version`.
+3. Production branch: `main`. Other branches get preview URLs.
+4. Custom domains → add `moderial.ai` (and `www.moderial.ai`). With the domain's DNS on
+   Cloudflare the records are created automatically.
+
+`static/_headers` sets security and cache headers; Pages serves `404.html` for unknown paths.
+
 ## Before launch
 
 - `siteUrl` in `site.config.json` is set to `https://moderial.ai` (canonical URLs, sitemap, OG image). Register the domain before launch.
